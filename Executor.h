@@ -20,11 +20,13 @@ private:
 	std::list<Student> students;
 
 	void init() {
-		Student st = Student(L"Пупкин", L"Васька", L"Иванович", new int[4]{ 3,2,3,5 });
+		Student st = Student(L"Пупкин", L"Васька", L"Иванович", new int[4] { 3, 2, 3, 5 });
 		students.push_back(st);
+		st = Student(L"Есенин", L"Сергей", L"Александрович", new int[4] { 3, 3, 3, 5 });
 		students.push_back(st);
+		st = Student(L"Петров", L"Василий", L"Иосифович", new int[4] { 3, 3, 3, 5 });
 		students.push_back(st);
-		st = Student(L"Пупкин", L"Васька", L"Иванович", new int[4] { 3, 3, 3, 5 });
+		st = Student(L"Иванова", L"Мария", L"Сергеевна", new int[4] { 3, 3, 3, 5 });
 		students.push_back(st);
 	}
 
