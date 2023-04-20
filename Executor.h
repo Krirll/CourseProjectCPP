@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #define _CRT_SECURE_NO_WARNINGS
 #include "Commands.h"
 #include "ConsoleHelper.h"
@@ -20,13 +20,13 @@ private:
 	std::list<Student> students;
 
 	void init() {
-		Student st = Student(L"Пупкин", L"Васька", L"Иванович", new int[4] { 3, 2, 3, 5 });
+		Student st = Student(L"РџСѓРїРєРёРЅ", L"Р’Р°СЃСЊРєР°", L"РРІР°РЅРѕРІРёС‡", new int[4] { 3, 2, 3, 5 });
 		students.push_back(st);
-		st = Student(L"Есенин", L"Сергей", L"Александрович", new int[4] { 3, 3, 3, 5 });
+		st = Student(L"Р•СЃРµРЅРёРЅ", L"РЎРµСЂРіРµР№", L"РђР»РµРєСЃР°РЅРґСЂРѕРІРёС‡", new int[4] { 3, 3, 3, 5 });
 		students.push_back(st);
-		st = Student(L"Петров", L"Василий", L"Иосифович", new int[4] { 3, 3, 3, 5 });
+		st = Student(L"РџРµС‚СЂРѕРІ", L"Р’Р°СЃРёР»РёР№", L"РРѕСЃРёС„РѕРІРёС‡", new int[4] { 3, 3, 3, 5 });
 		students.push_back(st);
-		st = Student(L"Иванова", L"Мария", L"Сергеевна", new int[4] { 3, 3, 3, 5 });
+		st = Student(L"РРІР°РЅРѕРІР°", L"РњР°СЂРёСЏ", L"РЎРµСЂРіРµРµРІРЅР°", new int[4] { 3, 3, 3, 5 });
 		students.push_back(st);
 	}
 
@@ -47,7 +47,7 @@ private:
 			std::cout << description;
 			std::wcin >> result;								   
 			std::wcin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			if (result.length() > 1 && result.length() < limit && result.find_first_of(L"0123456789 !?-=+@#$%^&*(){}[],.;:'\\/\"№") == std::wstring::npos) {
+			if (result.length() > 1 && result.length() < limit && result.find_first_of(L"0123456789 !?-=+@#$%^&*(){}[],.;:'\\/\"в„–") == std::wstring::npos) {
 				return result;
 			}
 			else
@@ -80,25 +80,25 @@ public:
 				switch (static_cast<int>(symbol))
 				{
 					case static_cast<int>(Commands::ADD_STUDENT): {
-						std::wstring lastName = enterStringParameter("\nВведите фамилию -> ", 25);
-						std::wstring name = enterStringParameter("\nВведите имя -> ", 25);
-						std::wstring middleName = enterStringParameter("\nВведите отчество -> ", 30);
+						std::wstring lastName = enterStringParameter("\nР’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ -> ", 25);
+						std::wstring name = enterStringParameter("\nР’РІРµРґРёС‚Рµ РёРјСЏ -> ", 25);
+						std::wstring middleName = enterStringParameter("\nР’РІРµРґРёС‚Рµ РѕС‚С‡РµСЃС‚РІРѕ -> ", 30);
 						int marks[ARRAY_SIZE];
-						marks[0] = enterIntParameter("\nВведите первую оценку -> ");
-						marks[1] = enterIntParameter("\nВведите вторую оценку -> ");
-						marks[2] = enterIntParameter("\nВведите третью оценку -> ");
-						marks[3] = enterIntParameter("\nВведите четвертую оценку -> ");
+						marks[0] = enterIntParameter("\nР’РІРµРґРёС‚Рµ РїРµСЂРІСѓСЋ РѕС†РµРЅРєСѓ -> ");
+						marks[1] = enterIntParameter("\nР’РІРµРґРёС‚Рµ РІС‚РѕСЂСѓСЋ РѕС†РµРЅРєСѓ -> ");
+						marks[2] = enterIntParameter("\nР’РІРµРґРёС‚Рµ С‚СЂРµС‚СЊСЋ РѕС†РµРЅРєСѓ -> ");
+						marks[3] = enterIntParameter("\nР’РІРµРґРёС‚Рµ С‡РµС‚РІРµСЂС‚СѓСЋ РѕС†РµРЅРєСѓ -> ");
 						students.push_back(Student(lastName, name, middleName, marks));
 						helper.showStudents(students);
 						break;
 					}
 					case static_cast<int>(Commands::SHOW_ALL): {
-						//вывод всех студентов в виде таблицы
+						//РІС‹РІРѕРґ РІСЃРµС… СЃС‚СѓРґРµРЅС‚РѕРІ РІ РІРёРґРµ С‚Р°Р±Р»РёС†С‹
 						helper.showStudents(students);
 						break;
 					}
 					case static_cast<int>(Commands::GET_EXCELLENT_STUDENTS): {
-						//вывод студентов без двоек в виде таблицы
+						//РІС‹РІРѕРґ СЃС‚СѓРґРµРЅС‚РѕРІ Р±РµР· РґРІРѕРµРє РІ РІРёРґРµ С‚Р°Р±Р»РёС†С‹
 						std::list<Student> excellentStudents;
 						std::copy_if(
 							students.begin(),
@@ -110,7 +110,7 @@ public:
 						break;
 					}
 					case static_cast<int>(Commands::CALCULATE_AVERAGES): {
-						//вывести всех студентов вместе со средним арифметическим
+						//РІС‹РІРµСЃС‚Рё РІСЃРµС… СЃС‚СѓРґРµРЅС‚РѕРІ РІРјРµСЃС‚Рµ СЃРѕ СЃСЂРµРґРЅРёРј Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРёРј
 						std::list<Student> newList;
 						std::copy_if(
 							students.begin(),
@@ -122,14 +122,14 @@ public:
 						break;
 					}
 					case static_cast<int>(Commands::READ_FILE): {
-						//чтение студентов из файла и вывод студентов
+						//С‡С‚РµРЅРёРµ СЃС‚СѓРґРµРЅС‚РѕРІ РёР· С„Р°Р№Р»Р° Рё РІС‹РІРѕРґ СЃС‚СѓРґРµРЅС‚РѕРІ
 						OPENFILENAMEA dialog;
 						char filename[MAX_PATH];
 						ZeroMemory(&filename, sizeof(filename));
 						ZeroMemory(&dialog, sizeof(dialog));
 						dialog.lStructSize = sizeof(dialog);
 						dialog.hwndOwner = NULL;
-						dialog.lpstrFilter = "Текстовые документы\0*.txt\0";
+						dialog.lpstrFilter = "РўРµРєСЃС‚РѕРІС‹Рµ РґРѕРєСѓРјРµРЅС‚С‹\0*.txt\0";
 						dialog.lpstrFile = filename;
 						dialog.nMaxFile = MAX_PATH;
 						dialog.lpstrTitle = "Select a File";
@@ -200,13 +200,13 @@ public:
 						break;
 					}
 					case static_cast<int>(Commands::EXIT): {
-						//выход из программы
+						//РІС‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹
 						helper.showExit();
 						exit(0);
 						break;
 					}
 					default: {
-						//вывод об ошибке, несуществующая команда;
+						//РІС‹РІРѕРґ РѕР± РѕС€РёР±РєРµ, РЅРµСЃСѓС‰РµСЃС‚РІСѓСЋС‰Р°СЏ РєРѕРјР°РЅРґР°;
 						helper.showCommandError();
 						break;
 					}
