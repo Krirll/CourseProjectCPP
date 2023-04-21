@@ -51,7 +51,7 @@ private:
 				return result;
 			}
 			else
-				helper.showAppendError();
+				helper.showAppendError(limit);
 		}
 	}
 

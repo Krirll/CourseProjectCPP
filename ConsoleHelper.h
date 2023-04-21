@@ -3,6 +3,7 @@
 #include "Errors.h"
 #include "Student.h"
 #include <list>
+#include <format>
 #define HORIZONTAL_LINE "\n----------------------------------------------------------------------------------------------------------\n"
 #define HORIZONTAL_LINE_AVERAGE "\n-------------------------------------------------------------------------------------------------------------------------\n"
 #define FORMAT_STRING_MAIN L"| %-25s | %-25s | %-30s | %-13s |"
@@ -43,8 +44,8 @@ public:
 		std::cout << errors.FILE_CANT_BE_OPENED();
 	}
 
-	void showAppendError() {
-		std::cout << errors.ERROR_WHILE_APPEND_PARAM();
+	void showAppendError(int limit) {
+		printf(errors.ERROR_WHILE_APPEND_PARAM().c_str(), limit);
 	}
 
 	void showMarkError() {
