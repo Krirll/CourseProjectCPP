@@ -73,6 +73,12 @@ public:
 		}
 	}
 
+	void showStudentsWithoutTwo(std::list<Student> list) {
+		showStudents(list);
+		size_t count = list.size();
+		wprintf(L"\nЧисло студентов без неудовлетворительных оценок: %d\n",  static_cast<int>(count));
+	}
+
 	void showStudentsWithAverage(std::list<Student> list) {
 		//вывести таблицу с ФИО, оценками и средним арифмитическим
 		printf(HORIZONTAL_LINE_AVERAGE);

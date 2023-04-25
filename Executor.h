@@ -106,7 +106,7 @@ public:
 							std::back_inserter(excellentStudents),
 							[](Student s) { return s.isExcellentStudent(); }
 						);
-						helper.showStudents(excellentStudents);
+						helper.showStudentsWithoutTwo(excellentStudents);
 						break;
 					}
 					case static_cast<int>(Commands::CALCULATE_AVERAGES): {
